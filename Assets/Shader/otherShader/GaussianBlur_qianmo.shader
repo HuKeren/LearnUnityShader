@@ -85,8 +85,8 @@ Shader "lcl/otherShader/GaussianBlur_qianmo"
     //【3】顶点输入结构体 || Vertex Input Struct  
     struct VertexInput  
     {  
-        //顶点位置坐标  
-        float4 vertex : POSITION;  
+        //顶点位置坐标
+        float4 vertex : POSITION;
         //一级纹理坐标  
         half2 texcoord : TEXCOORD0;  
     };  

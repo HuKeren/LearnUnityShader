@@ -1,13 +1,13 @@
+// ------------------------【高斯模糊】---------------------------
 //create by 长生但酒狂
 Shader "lcl/screenEffect/gaussBlur"  
 {  
+    // ------------------------【属性】---------------------------
     Properties  
     {  
         _MainTex("Base (RGB)", 2D) = "white" {}  
     }  
-    
-    //通过CGINCLUDE我们可以预定义一些下面在Pass中用到的struct以及函数，  
-    //这样在pass中只需要设置渲染状态以及调用函数,shader更加简洁明了  
+    // ------------------------【CG代码】---------------------------
     CGINCLUDE  
     #include "UnityCG.cginc"  
     
@@ -46,7 +46,7 @@ Shader "lcl/screenEffect/gaussBlur"
         // o.uv45 = v.texcoord.xyxy + _offsets.xyxy * float4(1, 1, -1, -1) * 3.0;  
         
         return o;  
-    }  
+    }
 
     float computerBluGauss(float x,float sigma) {
         return 0.39894*exp(-0.5*x*x/(0.20*sigma))/sigma*sigma;
